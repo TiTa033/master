@@ -2,18 +2,17 @@ public class Zoo {
 
     Animal[] animals;
     String name, city;
-    int nbrCages;
-
+    final int nbrCages = 25;
     int nbrAnimals;
-
-    public Zoo() {
-    }
 
     public Zoo(String name, String city, int nbrCages) {
         animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
+    }
+
+    public Zoo() {
+
     }
 
     void displayZoo() {
@@ -25,22 +24,23 @@ public class Zoo {
             return false;
         if (nbrAnimals == nbrCages)
             return false;
-        animals[nbrAnimals] = animal;
-        nbrAnimals++;
+        animals[nbrAnimals++] = animal;
         return true;
     }
+
 
     boolean removeAnimal(Animal animal) {
         int indexAnimal = searchAnimal(animal);
         if (indexAnimal == -1)
             return false;
-        for (int i = indexAnimal; i < nbrAnimals; i++) {
+        for (int i = indexAnimal; i < nbrAnimals - 1; i++) {
             animals[i] = animals[i + 1];
-            animals[nbrAnimals] = null;
-            this.nbrAnimals--;
         }
+        animals[nbrAnimals - 1] = null;
+        this.nbrAnimals--;
         return true;
     }
+
 
     void displayAnimals() {
         System.out.println("Liste des animaux de " + name + ":");
@@ -56,6 +56,12 @@ public class Zoo {
                 return i;
         }
         return index;
+    }
+    boolean isZooFull() {
+        boolean b = false;
+        if (nbrAnimals >= nbrCages){
+        return true;}
+        else return b;
     }
 
 

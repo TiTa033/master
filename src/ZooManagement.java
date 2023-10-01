@@ -13,14 +13,14 @@ public class ZooManagement {
 
         System.out.println("-------------------------------------------------------------");
         //Instruction 3
-        Scanner sc = new Scanner(System.in);
+       /* Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez saisir le nombre de cages souhaité:");
         int nbrCagesSaisie = sc.nextInt();
         ZooManagement zm1 = new ZooManagement();
         zm1.nbrCages = nbrCagesSaisie;
         //Etape optionelle
         zm1.zooName = "YaFa";
-        System.out.println(zm1.zooName + " comporte " + zm1.nbrCages + " cages ");
+        System.out.println(zm1.zooName + " comporte " + zm1.nbrCages + " cages ");*/
         Animal lion = new Animal();
         lion.name="Ousayed";
         lion.family="Felidae";
@@ -30,7 +30,7 @@ public class ZooManagement {
         Zoo myZoo = new Zoo();
         myZoo.name="Yafa";
         myZoo.city="El mourouj 4";
-        myZoo.nbrCages=20;
+        //myZoo.nbrCages=20;
         myZoo.animals= new Animal[25];
 
         Animal hippopotame = new Animal("Artiodactyles", "Taweret", 26, true);
@@ -49,6 +49,8 @@ public class ZooManagement {
         System.out.println(myZoo.searchAnimal(dog2));
 
         System.out.println(myZoo.removeAnimal(dog));
+
+        myZoo.isZooFull();
         myZoo.displayAnimals();
     }
 
